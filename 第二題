@@ -1,0 +1,117 @@
+# 定義行李類別
+class luggage:
+    # 初始化函數，包含5個屬性：ID、重量、出發機場、目的地、旅客姓名
+    def __init__(self, id, weight, boarding, place, name):
+        self._id = id
+        self._weight = weight
+        self._boarding = boarding
+        self._place = place
+        self._name = name
+     # 取得行李資訊的函數
+    def get_luggage_info(self):
+        return {
+            "ID": self._id,
+            "Weight": self._weight,
+            "Boarding": self._boarding,
+            "Place": self._place,
+            "Name": self._name
+        }
+# 修改ID的函數
+    def update_id(self, new_id):
+        self._id = new_id
+# 修改重量的函數
+    def update_weight(self, new_weight):
+        self._weight = new_weight
+# 修改出發機場的函數
+    def update_boarding(self, new_boarding):
+        self._boarding = new_boarding
+# 修改目的地的函數
+    def update_place(self, new_place):
+        self._place = new_place
+# 修改旅客姓名的函數
+    def update_name(self, new_name):
+        self._name = new_name
+
+# 定義登機牌類別
+class BoardingPass:
+    # 初始化函數，包含7個屬性：旅客姓名、登機證編號、登機時間、登機門編號、座位位置6排、行李件數、行李ID
+    def __init__(self, PassengerName, Boardingpassnumber, time, Gatenumber, Seatlocationrow6, Numberofpieces, id):
+        self._PassengerName = PassengerName
+        self._Boardingpassnumber = Boardingpassnumber
+        self._time = time
+        self._Gatenumber = Gatenumber
+        self._Seatlocationrow6 = Seatlocationrow6
+        self._Numberofpieces = Numberofpieces
+        self._id = id
+ # 取得登機牌資訊的函數
+    def get_boarding_pass_info(self):
+        return {
+            "PassengerName": self._PassengerName,
+            "Boardingpassnumber": self._Boardingpassnumber,
+            "Time": self._time,
+            "Gatenumber": self._Gatenumber,
+            "Seatlocationrow6": self._Seatlocationrow6,
+            "Numberofpieces": self._Numberofpieces,
+            "ID": self._id
+        }
+#更新名稱
+    def update_passenger_name(self, new_passenger_name):
+        self._PassengerName = new_passenger_name
+#更新登機編號
+    def update_boardingpass_number(self, new_boardingpass_number):
+        self._Boardingpassnumber = new_boardingpass_number
+#更新時間
+    def update_time(self, new_time):
+        self._time = new_time
+#更新編號
+    def update_gate_number(self, new_gate_number):
+        self._Gatenumber = new_gate_number
+#更新座位位置6排
+    def update_seat_location_row6(self, new_seat_location_row6):
+        self._Seatlocationrow6 = new_seat_location_row6
+#更新地方
+    def update_number_of_pieces(self, new_number_of_pieces):
+        self._Numberofpieces = new_number_of_pieces
+#更新ID
+    def update_id(self, new_id):
+        self._id = new_id
+
+# 定義打印行李的函數
+def print_luggage_info(luggage):
+    print("Luggage Info:")
+    for key, value in luggage.get_luggage_info().items():
+        print(f"{key}: {value}")
+    print()
+
+# 定義登機牌的函數
+def print_boarding_pass_info(boarding_pass):
+    print("Boarding Pass Info:")
+    for key, value in boarding_pass.get_boarding_pass_info().items():
+        print(f"{key}: {value}")
+    print()
+
+# 創建行李對象
+luggage1 = Luggage(id=123, weight=20, boarding="taiwan", place="usa", name="dodo")
+
+# 創建登機牌對象
+boarding_pass1 = BoardingPass(
+    PassengerName="dodo",
+    Boardingpassnumber="A123",
+    time="12:00 PM",
+    Gatenumber="Gate 01",
+    Seatlocationrow6="A",
+    Numberofpieces=5,
+    id=123
+)
+
+# 修改訊息
+luggage1.update_id(456)
+luggage1.update_weight(25)
+
+# 修改登機牌訊息
+boarding_pass1.update_passenger_name("new_dodo")
+boarding_pass1.update_time("1:00 PM")
+
+# 輸出訊息
+print_luggage_info(luggage1)
+print_boarding_pass_info(boarding_pass1)
